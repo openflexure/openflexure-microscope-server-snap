@@ -6,7 +6,12 @@ description: |
 base: core18
 confinement: strict
 architectures:
-  - build-on: [arm64, armhf, amd64]
+  - build-on: arm64
+    run-on: arm64
+  - build-on: armhf
+    run-on: armhf
+  - build-on: amd64
+    run-on: amd64
 
 apps:
   run:
