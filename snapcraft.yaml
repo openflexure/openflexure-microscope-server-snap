@@ -5,6 +5,8 @@ description: |
  test app for python
 base: core18
 confinement: strict
+architectures:
+  - build-on: [arm64, armhf, amd64]
 
 apps:
   run:
@@ -16,6 +18,7 @@ apps:
       - network
       - network-bind
       - opengl
+
 parts:
   openflexure-microscope-server:
     plugin: python
