@@ -46,7 +46,7 @@ parts:
       poetry install --no-dev
       # Let Python plugin set up staging
       snapcraftctl build
-    build-packages: [git, curl, findutils, python3-dev, python3-venv]
+    build-packages: [git, curl, findutils, zlib, python3-dev, python3-venv]
     build-environment:
       - C_INCLUDE_PATH: /usr/include/python3.6
     stage-packages: []
