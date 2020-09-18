@@ -34,6 +34,8 @@ parts:
       - pip
       - wheel
     override-build: |
+      # Add piwheels to pip indexes
+      echo -e "[global]\nextra-index-url=https://www.piwheels.org/simple" > /etc/pip.conf
       # Let Python plugin set up environment
       snapcraftctl build
       # Install Poetry
