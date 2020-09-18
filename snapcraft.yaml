@@ -37,7 +37,7 @@ parts:
       # Let Python plugin set up environment
       snapcraftctl build
       # Add piwheels to pip indexes
-      echo -e "[global]\nextra-index-url=https://www.piwheels.org/simple" > /etc/pip.conf
+      printf '[global]\nextra-index-url=https://www.piwheels.org/simple\n' > /etc/pip.conf
       # Install Poetry
       curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
       # Activate Poetry
