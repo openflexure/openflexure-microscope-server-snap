@@ -1,8 +1,8 @@
 name: openflexure-microscope-server
-version: '2.5.0-beta.2-1'
 summary: python test package
 description: |
  test app for python
+adopt-info: openflexure-microscope-server
 base: core18
 confinement: strict
 architectures:
@@ -28,7 +28,11 @@ parts:
   openflexure-microscope-server:
     plugin: python
     python-version: python3
-    source: https://build.openflexure.org/openflexure-microscope-server/openflexure-microscope-server-v2.5.0-beta.2.tar.gz
+    source: https://build.openflexure.org/openflexure-microscope-server/latest
+    override-pull: |
+      snapcraftctl pull
+      version=$(awk -F'[ ="]+' '$1 == "version" { print $2 }' pyproject.toml)
+      snapcraftctl set-version $version
     python-packages:
       # Upgrade pip and wheel
       - pip
